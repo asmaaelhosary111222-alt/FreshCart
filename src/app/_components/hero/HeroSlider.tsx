@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,6 +19,8 @@ const slides = [
     image:
       "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600",
     primaryButton: "Shop Now",
+     primaryHref: "/products",
+         secondaryHref: "/404",
     secondaryButton: "View Deals",
     primaryColor: "text-green-600",
   },
@@ -26,6 +30,9 @@ const slides = [
     image:
       "https://images.unsplash.com/photo-1518843875459-f738682238a6?w=1600",
     primaryButton: "Shop Now",
+        primaryHref: "/products",
+    secondaryHref: "/404",
+
     secondaryButton: "Learn More",
     primaryColor: "text-blue-600",
   },
@@ -36,6 +43,9 @@ const slides = [
       "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1600",
     primaryButton: "Order Now",
     secondaryButton: "Delivery Info",
+        primaryHref: "/products",
+    secondaryHref: "/404",
+
     primaryColor: "text-purple-600",
   },
 ];
@@ -193,82 +203,79 @@ export default function HeroSlider() {
                     "
                   >
                     {/* Primary button */}
-                    <button
-                      type="button"
+                    <Link
+                      href={slide.primaryHref}
+                      
                       className={`
-                        inline-flex
-                        min-h-12
-                        items-center
-                        justify-center
-                        rounded-lg
-                        bg-white
-                        px-7
-                        py-2.5
-                        text-base
-                        font-semibold
-                        ${slide.primaryColor}
-                        shadow-sm
-                        transition-all
-                        duration-200
-                        hover:bg-gray-50
-                        focus-visible:outline-none
-                        focus-visible:ring-2
-                        focus-visible:ring-white
-                        focus-visible:ring-offset-2
-                        focus-visible:ring-offset-green-700
-                        active:scale-[0.98]
-
-                        md:min-h-10
-                        md:px-5
-                        md:text-sm
-
-                        lg:min-h-10
-                        lg:px-5
-                        lg:py-2
-                        lg:text-sm
+                      inline-flex
+    min-h-12
+    items-center
+    justify-center
+    rounded-lg
+    bg-white
+    px-7
+    py-2.5
+    text-base
+    font-semibold
+    ${slide.primaryColor}
+    shadow-sm
+    transition-all
+    duration-200
+    hover:bg-gray-50
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-white
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-green-700
+    active:scale-[0.98]
+    md:min-h-10
+    md:px-5
+    md:text-sm
+    lg:min-h-10
+    lg:px-5
+    lg:py-2
+    lg:text-sm
                       `}
                     >
                       {slide.primaryButton}
-                    </button>
+                    </Link>
 
                     {/* Secondary button */}
-                    <button
-                      type="button"
-                      className="
-                        inline-flex
-                        min-h-12
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-white
-                        px-7
-                        py-2.5
-                        text-base
-                        font-semibold
-                        text-white
-                        transition-all
-                        duration-200
-                        hover:bg-white/10
-                        focus-visible:outline-none
-                        focus-visible:ring-2
-                        focus-visible:ring-white
-                        focus-visible:ring-offset-2
-                        focus-visible:ring-offset-green-700
-                        active:scale-[0.98]
-
-                        md:min-h-10
-                        md:px-5
-                        md:text-sm
-
-                        lg:min-h-10
-                        lg:px-5
-                        lg:py-2
-                        lg:text-sm
-                      "
-                    >
-                      {slide.secondaryButton}
-                    </button>
+                  <Link
+  href={slide.secondaryHref}
+  className="
+    inline-flex
+    min-h-12
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-white
+    px-7
+    py-2.5
+    text-base
+    font-semibold
+    text-white
+    transition-all
+    duration-200
+    hover:bg-white/10
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-white
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-green-700
+    active:scale-[0.98]
+    md:min-h-10
+    md:px-5
+    md:text-sm
+    lg:min-h-10
+    lg:px-5
+    lg:py-2
+    lg:text-sm
+  "
+>
+  {slide.secondaryButton}
+</Link>
                   </div>
                 </div>
               </div>
